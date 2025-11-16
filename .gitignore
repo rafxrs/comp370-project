@@ -18,6 +18,5 @@ Thumbs.db
 *.sqlite3
 .env
 .env.*
+src/config.py
 
-# Project-specific
-COMP 370 2024 Final Project with Details.docx
