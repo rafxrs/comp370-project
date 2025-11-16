@@ -1,0 +1,23 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local data & secrets
+*.log
+*.sqlite3
+.env
+.env.*
+
+# Project-specific
+COMP 370 2024 Final Project with Details.docx
