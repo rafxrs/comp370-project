@@ -1,0 +1,8 @@
+# Project Dependencies
+requests
+tqdm
+pandas
+# (Recommended) Development Tools
+python-dotenv        # if using .env files
+ipykernel            # for Jupyter notebooks
+jupyterlab

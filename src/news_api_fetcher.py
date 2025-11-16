@@ -3,6 +3,7 @@
 import time
 from src.news_api_client import NewsAPIClient
 from src.config import DEFAULT_LANG, DEFAULT_LIMIT
+from src.cleaning import clean_text
 
 class ArticleFetcher:
     def __init__(self, search_term, sources, target_count, lang=DEFAULT_LANG):
@@ -58,11 +59,14 @@ class ArticleFetcher:
                 if not self._source_matches(src):
                     continue
 
+                headline = clean_text(a.get("title") or "")
+                opening  = clean_text(a.get("snippet") or "")
+
                 collected.append({
                     "id": a.get("uuid"),
                     "source": src,
-                    "headline": a.get("title") or "",
-                    "opening": a.get("snippet") or "",
+                    "headline": headline,
+                    "opening": opening,
                     "coding": ""
                 })
 
