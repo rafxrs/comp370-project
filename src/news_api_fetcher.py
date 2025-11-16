@@ -1,7 +1,7 @@
 # src/news_api_fetcher.py
 
 import time
-from news_api_client import NewsAPIClient
+from src.news_api_client import NewsAPIClient
 from src.config import DEFAULT_LANG, DEFAULT_LIMIT
 
 class ArticleFetcher:

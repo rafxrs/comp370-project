@@ -20,3 +20,5 @@ Thumbs.db
 .env.*
 src/config.py
 
+# data files
+data/*.tsv
