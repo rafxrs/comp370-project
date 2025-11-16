@@ -9,27 +9,38 @@ class ArticleFetcher:
     def __init__(self, search_term, sources, target_count, lang=DEFAULT_LANG):
         self.client = NewsAPIClient()
         self.search_term = search_term
-        self.sources_requested = {s.lower() for s in sources}
         self.lang = lang
         self.limit = DEFAULT_LIMIT
         self.target_count = target_count
+        
+        # Normalize user-supplied allowed sources (important!)
+        normalized = {
+            "abcnews.go.com": "abcnews.com"
+        }
+
+        cleaned = set()
+        for s in sources:
+            s = s.lower()
+            if s in normalized:
+                s = normalized[s]
+            cleaned.add(s)
+
+        self.sources_requested = cleaned
 
     def _source_matches(self, source: str) -> bool:
-        """Return True if article source matches one of the allowed sources."""
+        """Return True if article source matches one of the allowed domains."""
         if not source:
             return False
 
         src = source.lower()
 
-        # normalize special cases
-        replacements = {
-            "abcnews.go.com": "abcnews.com",
-        }
-        if src in replacements:
-            src = replacements[src]
+        # Normalize special incoming cases
+        if src == "abcnews.go.com":
+            src = "abcnews.com"
 
-        # match by substring (because API sometimes returns 'cbc.ca/news'
+        # Match by substring
         return any(allowed in src for allowed in self.sources_requested)
+
 
     def fetch_articles(self):
         params = {

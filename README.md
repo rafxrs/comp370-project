@@ -15,44 +15,40 @@ The pipeline provides:
 - Modular, argparse‑driven scripts
 - Reusable `src/` modules for API requests, filtering, and cleaning
 
-## Project Structure
-
-project/
-│
-├── data/ # gitignored — contains raw/processed TSVs
-│ ├── raw/
-│ └── processed/
-│
-├── scripts/
-│ ├── fetch_news_api_articles.py
-│ └── ...
-│
-├── src/
-│ ├── config.py # gitignored (local only)
-│ ├── config.example.py
-│ ├── news_api_client.py
-│ ├── news_api_fetcher.py
-│ ├── cleaning.py
-│ └── writer.py
-│
-├── .gitignore
-└── README.txt
-
 ## How to Fetch Articles
+
+0. Install dependencies and get API key [https://thenewsapi.com/](https://thenewsapi.com/):
+
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 1. Export your API key:
 
+   ```bash
    export NEWS_API_KEY="your_api_key"
+   ```
+
+   **WARNING**: Running the fetcher with 167 articles may consume your free tier quota.
 
 2. Run the fetcher:
 
-   python -m scripts.fetch_news_api_articles -f Netanyahu -s nbcnews.com abcnews.go.com cbsnews.com cbc.ca -t 167 -o data/raw/netanyahu_rafael.tsv
+   ```bash
+   python -m scripts.fetch_news_api_articles -f Netanyahu -s nbcnews.com abcnews.go.com cbsnews.com cbc.ca -t 167 -o data/raw/netanyahu.tsv
+   ```
 
 3. The fetcher will:
+
    - Iterate through pages
    - Filter by source domain
    - Clean text (whitespace, boilerplate)
-   - Stop when target is reached
+   - Stop when target number of articles is reached
+
+4. After the fetch, prepare the data for coding:
+
+   ```bash
+   python -m scripts.process_tsv -i data/raw/netanyahu.tsv -o data/processed/netanyahu_processed.tsv
+   ```
 
 ## Environment Variables
 
