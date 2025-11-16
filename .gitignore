@@ -21,4 +21,5 @@ Thumbs.db
 src/config.py
 
 # data files
-data/*.tsv
+data/
+*.tsv
