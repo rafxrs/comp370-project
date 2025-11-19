@@ -15,6 +15,8 @@ def parse_args():
                         help="List of source domains (e.g., nbcnews.com abcnews.go.com)")
     parser.add_argument("--target", "-t", type=int, default=167,
                         help="Number of articles to collect")
+    parser.add_argument("--date", "-d", required=False,
+                        help="Start date (YYYY | YYYY-MM | YYYY-MM-DD). Results from that day forward.")
     parser.add_argument("--output", "-o", required=True,
                         help="Path to output TSV file")
 
@@ -26,7 +28,8 @@ def main():
     fetcher = ArticleFetcher(
         search_term=args.search,
         sources=args.sources,
-        target_count=args.target
+        target_count=args.target,
+        start_date=args.date
     )
 
     articles = fetcher.fetch_articles()

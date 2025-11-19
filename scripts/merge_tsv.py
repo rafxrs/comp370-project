@@ -27,7 +27,7 @@ def main():
     with open(args.output, "w", newline="", encoding="utf-8") as out:
         writer = csv.DictWriter(
             out,
-            fieldnames=["id", "source", "headline", "opening", "coding"],
+            fieldnames=["id", "source", "headline", "opening", "published_at", "coding"],
             delimiter="\t"
         )
         writer.writeheader()

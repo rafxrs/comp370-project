@@ -2,73 +2,107 @@
 
 ## Overview
 
-This project analyzes North American media coverage of a selected political figure.
-Our team selected **Benjamin Netanyahu**.
+Analysis of North American media coverage of **Benjamin Netanyahu**. The pipeline collects articles, filters sources, cleans text, and prepares structured TSVs for qualitative coding, topic modeling, and sentiment analysis.
 
-The pipeline provides:
+## Features
 
-- Automated article collection from TheNewsAPI
-- Source filtering for 12 pre‑chosen outlets
-- TSV dataset export
-- Text cleaning (removal of boilerplate, login prompts, video UI text)
-- Preparation for open coding, topic modeling, and sentiment annotation
-- Modular, argparse‑driven scripts
-- Reusable `src/` modules for API requests, filtering, and cleaning
+- Fetch articles via TheNewsAPI
+- Source domain filtering
+- Date range start filtering (`-d` flag)
+- Clean text (remove boilerplate/login/video UI noise)
+- Output TSV with `published_at` ISO timestamps
+- Processing script to add numbering & coding columns
+- Merge multiple TSVs
+- Environment‑based secret management (`NEWS_API_KEY`)
 
-## How to Fetch Articles
+## Setup
 
-0. Install dependencies and get API key [https://thenewsapi.com/](https://thenewsapi.com/):
+```bash
+pip install -r requirements.txt
+export NEWS_API_KEY="your_api_key"  # or set in PowerShell: $env:NEWS_API_KEY="your_api_key"
+```
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+## Fetch Articles
 
-1. Export your API key:
+Basic example:
 
-   ```bash
-   export NEWS_API_KEY="your_api_key"
-   ```
+```bash
+python -m scripts.fetch_news_api_articles -f Netanyahu -s nbcnews.com abcnews.go.com cbsnews.com cbc.ca -t 167 -o data/raw/netanyahu.tsv
+```
 
-   **WARNING**: Running the fetcher with 167 articles may consume your free tier quota.
+### Date Start Filtering (-d / --date)
 
-2. Run the fetcher:
+Limit results to articles published **from the specified start date up to the present** (no end date yet).
 
-   ```bash
-   python -m scripts.fetch_news_api_articles -f Netanyahu -s nbcnews.com abcnews.go.com cbsnews.com cbc.ca -t 167 -o data/raw/netanyahu.tsv
-   ```
+Accepted input formats (normalized to midnight UTC start):
 
-3. The fetcher will:
+| Input        | Normalized Start | Range Covered    |
+| ------------ | ---------------- | ---------------- |
+| `2024`       | `2024-01-01`     | 2024-01-01 → now |
+| `2024-07`    | `2024-07-01`     | 2024-07-01 → now |
+| `2024-07-15` | `2024-07-15`     | 2024-07-15 → now |
 
-   - Iterate through pages
-   - Filter by source domain
-   - Clean text (whitespace, boilerplate)
-   - Stop when target number of articles is reached
+Examples:
 
-4. After the fetch, prepare the data for coding:
+```bash
+# All of 2024
+python -m scripts.fetch_news_api_articles -f Netanyahu -s nbcnews.com abcnews.go.com -d 2024 -t 120 -o data/raw/netanyahu_2024.tsv
 
-   ```bash
-   python -m scripts.process_tsv -i data/raw/netanyahu.tsv -o data/processed/netanyahu_processed.tsv
-   ```
+# July 2024 onward
+python -m scripts.fetch_news_api_articles -f Netanyahu -s nbcnews.com abcnews.go.com -d 2024-07 -t 80 -o data/raw/netanyahu_2024_07.tsv
+
+# Specific date
+python -m scripts.fetch_news_api_articles -f Netanyahu -s nbcnews.com abcnews.go.com -d 2024-07-15 -t 50 -o data/raw/netanyahu_2024_07_15.tsv
+```
+
+Implementation details:
+
+- Internally sets `published_after=YYYY-MM-DDT00:00:00Z`.
+- Invalid format raises a clear error.
+- Omit `-d` to use provider default window.
+- End-date filtering (e.g. `--until`) not implemented yet.
+
+## Output Columns
+
+`id`, `source`, `headline`, `opening`, `published_at`, `coding` (plus `open_coding` / numbering after processing).
+
+## Process TSV (add numbering & coding placeholders)
+
+```bash
+python -m scripts.process_tsv -i data/raw/netanyahu.tsv -o data/processed/netanyahu_processed.tsv
+```
+
+## Merge Multiple TSVs
+
+```bash
+python -m scripts.merge_tsv -i "data/raw/*.tsv" -o data/processed/netanyahu_merged.tsv
+```
+
+## Cleaning Rules (see `src/cleaning.py`)
+
+Removes login prompts, stray UI text, duration labels, boilerplate, excess whitespace.
 
 ## Environment Variables
 
-- `NEWS_API_KEY` — required for API access
+`NEWS_API_KEY` – your API token (never commit the actual key; rotate if leaked).
 
-## Cleaning Rules
+## Coding / Analysis Next Steps
 
-`src/cleaning.py` removes:
+- Open coding & topic typology (3–8 topics)
+- TF‑IDF and summary generation
+- Sentiment annotation (pos/neg/neutral)
 
-- NBC login prompts
-- “Copied”
-- CBC “Duration 2:01”
-- embedded newlines
-- excessive whitespace
+## Security & Secrets
 
-## Coding Workflow (Next Steps)
+- API key loaded from environment in `src/config.py`.
+- Rotate the key if previously committed (generate new key, revoke old).
+- `.gitignore` excludes pycache and secret files.
 
-- Open code articles
-- Define a typology of 3–8 topics
-- Annotate remaining articles
-- Compute TF‑IDF top words per topic
-- Generate LLM summaries (ChatGPT)
-- Apply sentiment labels (pos/neg/neutral)
+## Notes
+
+- High targets may exhaust free tier quotas.
+- Add an end-date flag in future if needed.
+
+## License / Usage
+
+Academic / course project. Verify terms of TheNewsAPI for data usage.
