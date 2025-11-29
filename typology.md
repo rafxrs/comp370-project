@@ -25,14 +25,40 @@ Articles describe the management of relations between the United States and Isra
 
 ### Edge Cases (Examples)
 - **Articles describing the perception of Netanyahu from the American public**  
- *Example:* “Israel’s Netanyahu says ‘antisemitic mobs’ have taken over America’s ‘leading universities”
+ *Example:* “Israel’s Netanyahu says ‘antisemitic mobs’ have taken over America’s ‘leading universities”  
   We do not include this, as it does not refelct diplomatic relations, but perception.  
 - If the article **highlights topics outside of US-Israel relations**, depsite American leaders being mentioned, we exclude.  
  *Example:* “Zohran Mamdani says NYC should uphold ICC arrest warrant for Netanyahu if he visits city”
-  We exclude, as the focus of the article is Neytanyahu's legal proceedings.
+  We exclude, as the focus of the article is Neytanyahu's legal proceedings.  
 - Articles which extend to **Neytanyahu's personal opinions**, we exclude.  
- *Example:* “Netanyahu calls Charlie Kirk 'once-in-a-generation' figure, says he will think of him for 'all my life”
+ *Example:* “Netanyahu calls Charlie Kirk 'once-in-a-generation' figure, says he will think of him for 'all my life”  
   This article does not address diplomatic relations, but a personal view of Netanyahu - therefore, we exclude.
+
+## 2. Netanyahu’s Political Standing & Israeli Domestic Politics
+
+### Definition
+Articles which describe **internal political affairs**, such as administration, changes in leadership, policy changes, etc. This type also addresses Netanyahu’s political views and domestic influence. 
+
+### Included Cases (Examples)
+- **Articles addressing change in Israel's political parties and or leaders**  
+  *Example:* “Israel’s attorney general tells Netanyahu to reexamine ultranationalist police minister’s role”
+- **Articles mentioning change in Israel policies or laws**    
+  *Example:* “Israeli Prime Minister Netanyahu disbands war cabinet”
+- **Mentions of Israeli media, Israel's public opinion**  
+  *Example:* “Families of Israeli hostages join protests calling for Netanyahu to go”
+
+### Excluded Cases
+- Mentions of international relations and/or international perception
+- Articles addressing hostage crisis or cease-fire negotiations
+- Articles addressing military operations or strategies
+
+### Edge Cases (Examples)
+- If the article implicates effects on the internal political landscape of Israel, we include.   
+  *Example:* “Netanyahu announces Al Jazeera will no longer be allowed to broadcast from Israel”  
+  Though Al Jazeera is a Qatari media network, the article focuses on internal media, therefore we include.  
+- Articles which reflect Neytanhu's personal expressions are exlcuded, as it strays from his political standing.  
+  *Example:* “Netanyahu slams the west for recognizing Palestinian state”
+  We exclude this article, though it refers to the prime minister's political views, it targets his expression towards another country.
 
 ## 3. Gaza War Military Operations & Strategy
 
