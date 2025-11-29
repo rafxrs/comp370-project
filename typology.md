@@ -3,7 +3,7 @@
 ### Definition
 This category includes news about **airstrikes, troop movements, offensives, strategic doctrine, military escalation, or battlefield status** in Gaza.
 
-### Included Cases (Examples)
+### Included Cases
 - **Announcements of new offensives or invasions**  
   *Example:* “Netanyahu announces date set for Rafah ground offensive”
 - **Statements about intensifying operations**  
@@ -15,7 +15,7 @@ This category includes news about **airstrikes, troop movements, offensives, str
 - **Ongoing battlefield actions**  
   *Example:* “Israel conducts extensive strikes as Netanyahu calls for increased force”
 
-### Excluded Cases (Examples)
+### Excluded Cases
 - Cease-fire or hostage deals  
   *Example:* “Netanyahu responds to Biden’s Gaza cease-fire statement” → Hostage Crisis & Cease-fire Negotiations  
 - Iran/Hezbollah front-line escalation  
@@ -23,7 +23,7 @@ This category includes news about **airstrikes, troop movements, offensives, str
 - U.S. political reaction to military plans  
   *Example:* “Biden tells Netanyahu Rafah incursions should not go ahead” → US-Israel diplomatic relations
 
-### Edge Cases (Examples)
+### Edge Cases
 - **If the core emphasis is U.S. pressure about an operation**  
   *Example:* “Biden warns Netanyahu against Rafah invasion” → US-Israel diplomatic relations  
 - **If protests against the invasion are the focus**  
@@ -35,7 +35,7 @@ This category includes news about **airstrikes, troop movements, offensives, str
 ### Definition
 This category captures coverage involving **cross-border threats, Hezbollah clashes, Iranian strikes, Israel’s retaliation, Syrian buffer zones, or regional alliances** beyond Gaza.
 
-### Included Cases (Examples)
+### Included Cases
 - **Warnings or threats directed at Iran or Lebanon**  
   *Example:* “Netanyahu warns Lebanon of ‘destruction and suffering’”
 - **Cross-border conflict with Hezbollah**  
@@ -47,7 +47,7 @@ This category captures coverage involving **cross-border threats, Hezbollah clas
 - **Israeli military actions in Syria tied to Iranian influence**  
   *Example:* “Netanyahu says troops will occupy a buffer zone in Syria”
 
-### Excluded Cases (Examples)
+### Excluded Cases
 - Gaza-specific military strategy  
   *Example:* “Israel to take over Gaza City” → Gaza War Military Operations  
 - Diplomatic friction with the U.S. about Iran  
@@ -55,7 +55,7 @@ This category captures coverage involving **cross-border threats, Hezbollah clas
 - ICC warrants involving Netanyahu  
   *Example:* “ICC seeks arrest warrant for Netanyahu” → International Legal & Diplomatic Pressure
 
-### Edge Cases (Examples)
+### Edge Cases
 - **Hezbollah mentioned briefly but article is Gaza-focused**  
   *Example:* “Hezbollah reacts to Rafah assault” → Gaza War Military Operations  
 - **Iran escalation framed as U.S.–Israel tension**  
@@ -69,7 +69,7 @@ This category captures coverage involving **cross-border threats, Hezbollah clas
 ### Definition
 This category captures coverage focused on **Netanyahu’s personal reputation, symbolic behavior, and how he is perceived by domestic or international audiences**, rather than policy decisions.
 
-### Included Cases (Examples)
+### Included Cases
 - **Public protests directed at Netanyahu**  
   *Example:* “Netanyahu visit sparks wave of protests in DC”
 - **Symbolic rejection such as walkouts**  
@@ -81,7 +81,7 @@ This category captures coverage focused on **Netanyahu’s personal reputation, 
 - **Assassination or threat narratives**  
   *Example:* “Businessman demanded $1M to kill Netanyahu”
 
-### Excluded Cases (Examples)
+### Excluded Cases
 - Protests about policy decisions  
   *Example:* “Protesters condemn Rafah offensive” → Gaza War Military Operations  
 - Criticism tied to diplomatic conflict  
@@ -89,7 +89,7 @@ This category captures coverage focused on **Netanyahu’s personal reputation, 
 - ICC legal cases  
   *Example:* “ICC indicts Netanyahu” → International Legal & Diplomatic Pressure
 
-### Edge Cases (Examples)
+### Edge Cases 
 - **Protest is both personal and policy-related**  
   *Example:* “Israelis protest Netanyahu over Gaza war and corruption” → choose dominant framing  
 - **Image mixed with diplomacy**  
