@@ -23,7 +23,7 @@ Articles describe the management of relations between the United States and Isra
 - Articles mentioning other international relations outside of the United States
 - Mentions of legal corruption cases such as ICC investigations
 
-### Edge Cases
+### Edge Cases (Examples)
 - **Articles describing the perception of Netanyahu from the American public**  
  *Example:* “Israel’s Netanyahu says ‘antisemitic mobs’ have taken over America’s ‘leading universities”
   We do not include this, as it does not refelct diplomatic relations, but perception.  
