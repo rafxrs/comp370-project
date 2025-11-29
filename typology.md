@@ -18,7 +18,7 @@ Articles describe the management of relations between the United States and Isra
 - **Articles describing joint efforts between both countries, such trade deals, military support, aid efforts**  
  *Example:* “Trump aides once helped elect Netanyahu, reflecting leaders’ deep ties”
 
-### Excluded Cases (Examples)
+### Excluded Cases 
 - Articles referring to cease-fire or hostage negotiations
 - Articles mentioning other international relations outside of the United States
 - Mentions of legal corruption cases such as ICC investigations
