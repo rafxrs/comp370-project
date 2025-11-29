@@ -10,7 +10,7 @@ We are able to evaluate international relations with regards to Netanyahu, with 
 ### Definition
 Articles describe the management of relations between the United States and Israel. They cover the specific relationship with the countries’ leaders, as well as their governments. Topics such as **politics, cooperative strategies, diplomatic negotiations** are included.  
 
-### Included Cases (Examples)
+### Included Cases
 - **Articles describing the relationship between Netanyahu and various American political figures**  
  *Example:* “Benjamin Netanyahu praises Trump’s Middle East shift, says President is country’s ‘greatest friend”
 - **Articles mentioning planned visits and/or meetings between both countries**    
@@ -23,7 +23,7 @@ Articles describe the management of relations between the United States and Isra
 - Articles mentioning other international relations outside of the United States
 - Mentions of legal corruption cases such as ICC investigations
 
-### Edge Cases (Examples)
+### Edge Cases
 - **Articles describing the perception of Netanyahu from the American public**  
  *Example:* “Israel’s Netanyahu says ‘antisemitic mobs’ have taken over America’s ‘leading universities”  
   We do not include this, as it does not refelct diplomatic relations, but perception.  
@@ -39,7 +39,7 @@ Articles describe the management of relations between the United States and Isra
 ### Definition
 Articles which describe **internal political affairs**, such as administration, changes in leadership, policy changes, etc. This type also addresses Netanyahu’s political views and domestic influence. 
 
-### Included Cases (Examples)
+### Included Cases
 - **Articles addressing change in Israel's political parties and or leaders**  
   *Example:* “Israel’s attorney general tells Netanyahu to reexamine ultranationalist police minister’s role”
 - **Articles mentioning change in Israel policies or laws**    
@@ -52,7 +52,7 @@ Articles which describe **internal political affairs**, such as administration, 
 - Articles addressing hostage crisis or cease-fire negotiations
 - Articles addressing military operations or strategies
 
-### Edge Cases (Examples)
+### Edge Cases
 - If the article implicates effects on the **internal political landscape** of Israel, we include.   
   *Example:* “Netanyahu announces Al Jazeera will no longer be allowed to broadcast from Israel”  
   Though Al Jazeera is a Qatari media network, the article focuses on internal media, therefore we include.  
