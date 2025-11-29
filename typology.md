@@ -9,20 +9,25 @@ This category includes news about **airstrikes, troop movements, offensives, str
 - **Statements about intensifying operations**  
   *Example:* “Netanyahu orders ‘powerful’ strikes on Gaza”
 - **Military outcomes and tactical assessments**  
-  *Example:* “IDF spokesman says Hamas cannot be defeated”  
+  *Example:* “IDF spokesman says Hamas cannot be defeated”
 - **Occupation or control plans for Gaza**  
   *Example:* “Israel intends to take over Gaza”
 - **Ongoing battlefield actions**  
   *Example:* “Israel conducts extensive strikes as Netanyahu calls for increased force”
 
-### Excluded Cases
-- Cease-fire or hostage deals → Hostage Crisis & Cease-fire Negotiations.  
-- Iran/Hezbollah front-line escalation → Iran, Hezbollah, and Regional Escalation.  
-- U.S. political reaction to military plans → US-Israel diplomatic relations.
+### Excluded Cases (Examples)
+- Cease-fire or hostage deals  
+  *Example:* “Netanyahu responds to Biden’s Gaza cease-fire statement” → Hostage Crisis & Cease-fire Negotiations  
+- Iran/Hezbollah front-line escalation  
+  *Example:* “Netanyahu warns Lebanon of ‘destruction and suffering’” → Iran, Hezbollah, and Regional Escalation  
+- U.S. political reaction to military plans  
+  *Example:* “Biden tells Netanyahu Rafah incursions should not go ahead” → US-Israel diplomatic relations
 
-### Edge Cases
-- If the *core emphasis* is U.S. pressure about an operation (e.g., “Biden warns Netanyahu against Rafah invasion”), it belongs under **US-Israel diplomatic relations**, not military strategy.
-- If the article describes protests against the *operation*, but the story centers on public sentiment, code as Personal Image.
+### Edge Cases (Examples)
+- **If the core emphasis is U.S. pressure about an operation**  
+  *Example:* “Biden warns Netanyahu against Rafah invasion” → US-Israel diplomatic relations  
+- **If protests against the invasion are the focus**  
+  *Example:* “Global protests erupt over Israeli assault on Rafah” → Personal Image & Public Perception
 
 
 ## 6. Iran, Hezbollah, and Regional Escalation
@@ -42,15 +47,21 @@ This category captures coverage involving **cross-border threats, Hezbollah clas
 - **Israeli military actions in Syria tied to Iranian influence**  
   *Example:* “Netanyahu says troops will occupy a buffer zone in Syria”
 
-### Excluded Cases
-- Gaza-specific military strategy → Gaza War Military Operations.  
-- Diplomatic friction with the U.S. about Iran → US-Israel diplomatic relations.  
-- ICC warrants involving Netanyahu → International Legal & Diplomatic Pressure.
+### Excluded Cases (Examples)
+- Gaza-specific military strategy  
+  *Example:* “Israel to take over Gaza City” → Gaza War Military Operations  
+- Diplomatic friction with the U.S. about Iran  
+  *Example:* “Biden opposes Israeli strike on Iran” → US-Israel diplomatic relations  
+- ICC warrants involving Netanyahu  
+  *Example:* “ICC seeks arrest warrant for Netanyahu” → International Legal & Diplomatic Pressure
 
-### Edge Cases
-- **If Hezbollah is mentioned only in passing** while the article is clearly about a Gaza operation, classify under Gaza War.  
-- **If Iran escalation becomes a U.S.–Israel political conflict** (e.g., Biden objecting to a strike), code it under US-Israel diplomatic relations unless the conflict itself is the focus.  
-- **UN speeches mentioning Iran** count only when framed as a confrontation, not personal image.
+### Edge Cases (Examples)
+- **Hezbollah mentioned briefly but article is Gaza-focused**  
+  *Example:* “Hezbollah reacts to Rafah assault” → Gaza War Military Operations  
+- **Iran escalation framed as U.S.–Israel tension**  
+  *Example:* “Biden warns Israel against escalation with Iran” → US-Israel diplomatic relations  
+- **UN speeches mentioning Iran**  
+  *Example:* “Netanyahu accuses Iran during UN address” → stays here **only if confrontation is central**
 
 
 ## 7. Personal Image & Public Perception
@@ -60,25 +71,28 @@ This category captures coverage focused on **Netanyahu’s personal reputation, 
 
 ### Included Cases (Examples)
 - **Public protests directed at Netanyahu**  
-  *Example:* “Netanyahu visit sparks wave of protests in DC” 
+  *Example:* “Netanyahu visit sparks wave of protests in DC”
 - **Symbolic rejection such as walkouts**  
-  *Example:* “U.N. delegates walk out before Netanyahu speech”  
+  *Example:* “U.N. delegates walk out before Netanyahu speech”
 - **Stories focusing on Netanyahu as an individual rather than policy**  
   *Example:* “Netanyahu gifts Trump golden pager”
 - **Criticism of his personal commitment to hostages**  
-  *Example:* “Former hostage says Netanyahu ‘forgotten’ captives”  
+  *Example:* “Former hostage says Netanyahu ‘forgotten’ captives”
 - **Assassination or threat narratives**  
-  *Example:* “Businessman demanded $1M to kill Netanyahu” 
+  *Example:* “Businessman demanded $1M to kill Netanyahu”
 
-### Excluded Cases
-- Protests about policy decisions (e.g., Rafah invasion) → classify under Gaza War Military Operations.  
-- Criticism from U.S. leaders tied to diplomatic conflict (e.g., arms supply disputes) → US-Israel diplomatic relations.  
-- ICC legal cases → International Legal & Diplomatic Pressure.
+### Excluded Cases (Examples)
+- Protests about policy decisions  
+  *Example:* “Protesters condemn Rafah offensive” → Gaza War Military Operations  
+- Criticism tied to diplomatic conflict  
+  *Example:* “Biden says Netanyahu prolonging war” → US-Israel diplomatic relations  
+- ICC legal cases  
+  *Example:* “ICC indicts Netanyahu” → International Legal & Diplomatic Pressure
 
-### Edge Cases
-- **If a protest is about both Netanyahu personally and policy**, pick the dominant frame.  
-- **If the article mixes image and diplomacy**, choose the category that drives the narrative.  
-- Example borderline: Pelosi saying “Netanyahu should resign” focuses on his leadership status → Political Standing, *not* personal image.
-
-
-
+### Edge Cases (Examples)
+- **Protest is both personal and policy-related**  
+  *Example:* “Israelis protest Netanyahu over Gaza war and corruption” → choose dominant framing  
+- **Image mixed with diplomacy**  
+  *Example:* “Netanyahu mocked during state visit speech” → Personal Image unless diplomacy dominates  
+- **Borderline case: calls to resign**  
+  *Example:* “Pelosi says Netanyahu should resign” → Netanyahu’s Political Standing & Israeli Domestic Politics
