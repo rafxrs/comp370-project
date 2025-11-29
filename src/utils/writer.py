@@ -1,19 +1,25 @@
-# src/writer.py
-
 import csv
 
 def write_tsv(path, rows):
-    """Save article dicts to TSV."""
+    clean = lambda x: (x or "").replace("\t", " ").replace("\n", " ").replace("\r", " ")
+
     with open(path, "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f, delimiter="\t")
-        writer.writerow(["id", "source", "headline", "opening", "published_at", "coding"])
 
-        for r in rows:
+        writer.writerow([
+            "ID", "Source", "Date", "Title", "Opening",
+            "Open coding", "Coding", "Sentiment"
+        ])
+
+        for i, r in enumerate(rows, start=1):
             writer.writerow([
-                r.get("id", ""),
-                r.get("source", ""),
-                r.get("headline", ""),
-                r.get("opening", ""),
-                r.get("published_at", ""),
-                r.get("coding", "")
+                i,
+                clean(r.get("source")),
+                clean(r.get("date")),
+                clean(r.get("title")),
+                clean(r.get("opening")),
+                clean(r.get("open_coding")),
+                clean(r.get("coding")),
+                clean(r.get("sentiment")),
             ])
+

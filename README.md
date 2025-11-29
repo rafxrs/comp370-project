@@ -1,103 +1,88 @@
-# COMP370 Final Project: Media Coverage Analysis Pipeline
+# COMP370 Final Project — Media Coverage Analysis Pipeline
 
 ## Overview
 
-Analysis of North American media coverage of **Benjamin Netanyahu**. The pipeline collects articles, filters sources, cleans text, and prepares structured TSVs for qualitative coding, topic modeling, and sentiment analysis.
+A complete, modular Python pipeline for analyzing North American media coverage of political figures (default: Benjamin Netanyahu). The toolkit supports:
 
-## Features
-
-- Fetch articles via TheNewsAPI.com
-- Source domain filtering (by date, news provider, keyword, etc)
-- Clean text (remove boilerplate/login/video UI noise)
-- Output TSV with `published_at` ISO timestamps
-- Processing script to add numbering & coding columns
-- Merge multiple TSVs
+- Fetching news articles from TheNewsAPI
+- Cleaning and preprocessing text
+- TSV formatting for qualitative coding
+- Merging multiple datasets
+- Topic characterization using global unigram TF‑IDF
+- Sentiment annotation workflows
+- Easily switch to a different politician by changing input flags
 
 ## Setup
 
-```bash
+```
 git clone https://github.com/rafxrs/comp370-project
-mkdir -p data/raw data/processed
+mkdir -p data/raw data/processed data/tfidf
 pip install -r requirements.txt
-export NEWS_API_KEY="your_api_key"  # or set in PowerShell: $env:NEWS_API_KEY="your_api_key"
+
+export NEWS_API_KEY="your_api_key"
+# PowerShell:
+# $env:NEWS_API_KEY="your_api_key"
 ```
 
-## Fetch Articles
+## FULL WORKFLOW
 
-Basic example:
+### 1. Fetch Articles
 
-```bash
-python -m scripts.fetch_news_api_articles -f Netanyahu -s nbcnews.com abcnews.go.com cbsnews.com cbc.ca -d 2024 -t 167 -o data/raw/netanyahu.tsv
+Fetch articles mentioning a politician across selected news sources:
+
+```
+python -m scripts.fetch_news_api_articles     -f Netanyahu     -s nbcnews.com abcnews.go.com cbsnews.com cbc.ca     -d 2024     -t 150     -o data/raw/netanyahu_raw.tsv
 ```
 
-### Date Start Filtering (-d / --date)
+**Date filtering (`-d`)** accepts formats:
 
-Limit results to articles published **from the specified start date up to the present** (no end date yet).
+- `2024` → 2024‑01‑01 → now  
+- `2024-07` → 2024‑07‑01 → now  
+- `2024-07-15` → exact day → now  
 
-Accepted input formats (normalized to midnight UTC start):
+### 2. Process into Standardized TSV for Coding
 
-| Input        | Normalized Start | Range Covered    |
-| ------------ | ---------------- | ---------------- |
-| `2024`       | `2024-01-01`     | 2024-01-01 → now |
-| `2024-07`    | `2024-07-01`     | 2024-07-01 → now |
-| `2024-07-15` | `2024-07-15`     | 2024-07-15 → now |
+Adds numbering, normalizes timestamps, cleaning, and inserts coding columns:
 
-Examples:
+```
+python -m scripts.process_tsv     -i data/raw/netanyahu_raw.tsv     -o data/processed/netanyahu_processed.tsv
+```
+This will create 'open_coding', 'coding' and 'sentiment' columns for you to annotate.
 
-```bash
-# All of 2024
-python -m scripts.fetch_news_api_articles -f Netanyahu -s nbcnews.com abcnews.go.com -d 2024 -t 120 -o data/raw/netanyahu_2024.tsv
+### 3. Merge Multiple Files (optional)
 
-# July 2024 onward
-python -m scripts.fetch_news_api_articles -f Netanyahu -s nbcnews.com abcnews.go.com -d 2024-07 -t 80 -o data/raw/netanyahu_2024_07.tsv
-
-# Specific date
-python -m scripts.fetch_news_api_articles -f Netanyahu -s nbcnews.com abcnews.go.com -d 2024-07-15 -t 50 -o data/raw/netanyahu_2024_07_15.tsv
+```
+python -m scripts.merge_tsv     -i "data/raw/*.tsv"     -o data/processed/netanyahu_merged.tsv
 ```
 
-Implementation details:
+### 4. Manual Coding & Sentiment Work
 
-- Internally sets `published_after=YYYY-MM-DDT00:00:00Z`.
-- Invalid format raises a clear error.
-- Omit `-d` to use provider default window.
-- End-date filtering (e.g. `--until`) not implemented yet.
+The cleaned TSV contains:
+- `open_coding` → notes from qualitative coding  
+- `coding` → your assigned typology category. See our 'coding_typology' document for Benjamin Netanyahu.  
+- `sentiment` → pos / neg / neutral. See our 'sentiment_typology' document  
 
-## Output Columns
+This file is what you annotate manually before running the TF‑IDF.
 
-`id`, `source`, `headline`, `opening`, `published_at`, `coding` (plus `open_coding` / numbering after processing).
+### 5. Run TF‑IDF Topic Characterization
 
-## Process TSV (add numbering & coding placeholders)
+Uses **global unigram TF‑IDF** and averages scores per coding category.
 
-```bash
-python -m scripts.process_tsv -i data/raw/netanyahu.tsv -o data/processed/netanyahu_processed.tsv
+```
+python scripts/tf_idf.py     -i data/processed/netanyahu_annotated.xlsx     -n 10     -o data/tfidf
 ```
 
-## Merge Multiple TSVs
+Produces:
 
-```bash
-python -m scripts.merge_tsv -i "data/raw/*.tsv" -o data/processed/netanyahu_merged.tsv
-```
-
-## Cleaning Rules (see `src/cleaning.py`)
-
-Removes login prompts, stray UI text, duration labels, boilerplate, excess whitespace.
-
-## Environment Variables
-
-`NEWS_API_KEY` – your API token (never commit the actual key; rotate if leaked).
-
-## Coding / Analysis Next Steps
-
-- Open coding & topic typology (3–8 topics)
-- TF‑IDF and summary generation
-- Sentiment annotation (pos/neg/neutral)
+- `data/tfidf/summary.csv` — condensed table of top N terms per coding category  
+- `data/tfidf/tfidf_<category>.png` — bar charts for each coding typology  
 
 ## Notes
 
-- High targets may exhaust free tier quotas.
-- Add an end-date flag in future if needed.
+- Supports easily swapping target politician (simply change `-f` keyword and your coding scheme)
+- Stopword list may be extended using `config/stopwords.yaml`
+- High API usage may exceed free-tier quota
 
-## License / Usage
+## License
 
-Academic / course project. Verify terms of TheNewsAPI for data usage.
-
+For academic use (COMP370 coursework)

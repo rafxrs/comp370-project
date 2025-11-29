@@ -3,49 +3,58 @@ import argparse
 import pandas as pd
 import os
 
-def add_numbering(input_path, output_path):
-    # Load TSV
+def process_tsv(input_path, output_path):
     df = pd.read_csv(input_path, sep="\t")
 
-    # Add numbering column at the front
-    df.insert(0, "n", range(1, len(df) + 1))
+    # Normalize column names
+    df.columns = [c.lower().strip() for c in df.columns]
 
-    # Add annotation columns if missing
+    # Ensure required raw columns exist
+    expected = {"id", "source", "date", "title", "opening"}
+    missing = expected - set(df.columns)
+    if missing:
+        raise ValueError(f"Missing required columns in raw TSV: {missing}")
+
+    # Add annotation columns
     if "open_coding" not in df.columns:
         df["open_coding"] = ""
     if "coding" not in df.columns:
         df["coding"] = ""
+    if "sentiment" not in df.columns:
+        df["sentiment"] = ""
+
+    # Reorder columns EXACTLY as required
+    final_columns = [
+        "id",
+        "source",
+        "date",
+        "title",
+        "opening",
+        "open_coding",
+        "coding",
+        "sentiment"
+    ]
+
+    df = df[final_columns]
 
     # Save TSV
     df.to_csv(output_path, sep="\t", index=False)
     print(f"Saved updated TSV to: {output_path}")
 
-
 def main():
     parser = argparse.ArgumentParser(
-        description="Add numbering + open_coding + coding columns to a TSV dataset."
+        description="Add annotation columns (open coding, coding, sentiment) to raw TSV."
     )
-    parser.add_argument(
-        "-i", "--input", required=True, help="Path to input TSV file"
-    )
-    parser.add_argument(
-        "-o", "--output", required=False,
-        help="Output TSV path (default: <input>_numbered.tsv)"
-    )
-
+    parser.add_argument("-i", "--input", required=True)
+    parser.add_argument("-o", "--output")
     args = parser.parse_args()
 
-    input_path = args.input
+    output_path = args.output
+    if not output_path:
+        base, ext = os.path.splitext(args.input)
+        output_path = f"{base}_processed{ext}"
 
-    # auto-generate output path if not specified
-    if args.output:
-        output_path = args.output
-    else:
-        base, ext = os.path.splitext(input_path)
-        output_path = f"{base}_numbered{ext}"
-
-    add_numbering(input_path, output_path)
-
+    process_tsv(args.input, output_path)
 
 if __name__ == "__main__":
     main()

@@ -121,14 +121,24 @@ class ArticleFetcher:
                 headline = clean_text(a.get("title") or "")
                 opening  = clean_text(a.get("snippet") or "")
 
+                # Format date: YYYY-MM-DD → MM-DD-YYYY
+                raw_date = a.get("published_at") or ""
+                date_val = ""
+                if raw_date:
+                    try:
+                        dt = datetime.strptime(raw_date[:10], "%Y-%m-%d")
+                        date_val = dt.strftime("%m-%d-%Y")
+                    except:
+                        date_val = raw_date[:10]
+
                 collected.append({
                     "id": a.get("uuid"),
                     "source": src,
-                    "headline": headline,
-                    "opening": opening,
-                    "published_at": a.get("published_at") or "",
-                    "coding": ""
+                    "date": date_val,
+                    "title": headline,
+                    "opening": opening
                 })
+
 
                 if len(collected) >= self.target_count:
                     break

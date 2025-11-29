@@ -13,7 +13,6 @@ from src.tfidf.analysis import compute_category_tfidf
 from src.tfidf.visualization import save_plot
 from src.tfidf.summary import build_summary_table
 
-
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("-i", "--input", required=True)
@@ -22,17 +21,20 @@ def parse_args():
     parser.add_argument("-s", "--stopwords", default="config/stopwords.yaml")
     return parser.parse_args()
 
-
 def main():
     args = parse_args()
-    out_dir = Path(args.output)
+    run_tfidf(args.input, args.top_n, args.output, args.stopwords)
+
+def run_tfidf(input_path, top_n, output_dir, stopwords_path="config/stopwords.yaml"):
+    input_path = str(input_path)
+    out_dir = Path(output_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    df = load_dataset(args.input)
+    df = load_dataset(input_path)
     df = build_full_text(df)
     df = normalize_coding(df)
 
-    stopwords = load_stopwords(args.stopwords)
+    stopwords = load_stopwords(stopwords_path)
 
     texts = df["full_text"].tolist()
     matrix, terms = compute_global_tfidf(texts, stopwords)
@@ -40,10 +42,10 @@ def main():
     category_results = compute_category_tfidf(df, matrix, terms)
 
     for coding, tfidf_df in category_results.items():
-        top_df = tfidf_df.head(args.top_n)
+        top_df = tfidf_df.head(top_n)
         save_plot(top_df, coding, out_dir)
 
-    summary_df = build_summary_table(category_results, args.top_n)
+    summary_df = build_summary_table(category_results, top_n)
     summary_df.to_csv(out_dir / "summary.csv", index=True)
 
 

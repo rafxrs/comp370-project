@@ -23,3 +23,8 @@ src/config.py
 # data files
 data/
 *.tsv
+
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/
