@@ -1,3 +1,32 @@
+## 1. US-Israel Diplomatic Relations
+
+### Definition
+Articles describe the management of relations between the United States and Israel. They cover the specific relationship with the countries’ leaders, as well as their governments. Topics such as **politics, cooperative strategies, diplomatic negotiations** are included.  
+
+### Included Cases (Examples)
+- **Articles describing the relationship between Netanyahu and various American political figures**
+  *Example:* “Benjamin Netanyahu praises Trump’s Middle East shift, says President is country’s ‘greatest friend”
+- **Articles mentioning planned visits and/or meetings between both countries**
+  *Example:* “Netanyahu to meet Trump as Israeli leader looks to rekindle relationship”
+- **Articles describing joint efforts between both countries, such trade deals, military support, aid efforts**
+  *Example:* “Trump aides once helped elect Netanyahu, reflecting leaders’ deep ties”
+
+### Excluded Cases (Examples)
+- Articles referring to cease-fire or hostage negotiations
+- Articles mentioning other international relations outside of the United States
+- Mentions of legal corruption cases such as ICC investigations
+
+### Edge Cases
+- **Articles describing the perception of Netanyahu from the American public**
+  *Example:* “Israel’s Netanyahu says ‘antisemitic mobs’ have taken over America’s ‘leading universities”
+  We do not include this, as it does not refelct diplomatic relations, but perception.
+- If the article **highlights topics outside of US-Israel relations**, depsite American leaders being mentioned, we exclude.
+  *Example:* “Zohran Mamdani says NYC should uphold ICC arrest warrant for Netanyahu if he visits city”
+  We exclude, as the focus of the article is Neytanyahu's legal proceedings.
+- Articles which extend to **Neytanyahu's personal opinions**, we exclude.
+  *Example:* “Netanyahu calls Charlie Kirk 'once-in-a-generation' figure, says he will think of him for 'all my life”
+  This article does not address diplomatic relations, but a personal view of Netanyahu - therefore, we exclude.
+
 ## 3. Gaza War Military Operations & Strategy
 
 ### Definition
