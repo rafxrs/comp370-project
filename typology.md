@@ -92,6 +92,63 @@ This category includes news about **airstrikes, troop movements, offensives, str
   *Example:* “Global protests erupt over Israeli assault on Rafah” → Personal Image & Public Perception
 
 
+## 4. International Legal & Diplomatic Pressure
+
+### Definition
+Articles which describe **international legal actions, global diplomatic criticism, sanctions, ICC/ICJ involvement, or pressure from foreign governments** directed at Netanyahu or Israel. These pieces emphasize **external accountability**, the **legality** of Israeli actions, or efforts by countries and global institutions to influence Israeli policy.
+
+### Included Cases
+- **Articles addressing ICC or ICJ warrants, investigations, or legal filings**  
+  *Example:* “ICC seeks arrest warrant for Netanyahu over alleged war crimes”
+- **Coverage of sanctions, formal condemnations, or punitive diplomatic measures by foreign governments**  
+  *Example:* “Canada warns Israel of ‘concrete action’ over military expansion”
+- **Articles describing UN resolutions or international legal debates**  
+  *Example:* “UN experts say Israeli operations violate international law”
+- **Foreign governments applying diplomatic pressure outside of U.S.–Israel relations**  
+  *Example:* “France condemns Israeli strike as unlawful and disproportionate”
+
+### Excluded Cases
+- Articles referring to **U.S.–Israel diplomatic relations**
+- Articles centered on **hostage negotiations or cease-fire proposals**
+- Articles involving **Netanyahu’s personal image** or domestic political consequences
+
+### Edge Cases
+- If the article primarily concerns **legal legitimacy**, even if U.S. leaders are quoted, we include.  
+  *Example:* “Biden reacts to ICC’s Netanyahu warrant request” → International Legal & Diplomatic Pressure  
+- Criticism from NGOs or human rights groups belongs here **only when framed as legal accountability**, not public perception.  
+- If the legal or diplomatic pressure connects back to **domestic political fallout**, we exclude and classify under domestic politics instead.
+
+
+## 5. Hostage Crisis & Cease-fire Negotiations
+
+### Definition
+Articles which discuss **hostage situations, hostage-for-prisoner exchanges, cease-fire proposals, diplomatic mediation efforts, or negotiation frameworks** between Israel, Hamas, and mediating countries. These stories focus on **the process and progress of negotiations**, rather than broader political or military dynamics.
+
+### Included Cases
+- **Coverage of hostage release negotiations or proposals**  
+  *Example:* “Israel agrees to four-day pause in exchange for release of women and children”
+- **Articles focused on cease-fire deals tied directly to hostages**  
+  *Example:* “Qatar says breakthrough reached in hostage-for-cease-fire talks”
+- **Families of hostages pressuring government officials specifically about negotiations**  
+  *Example:* “Families demand Netanyahu approve deal to bring captives home”
+- **Hostage rescue operations framed within negotiation breakdowns or diplomatic context**  
+  *Example:* “IDF frees two captives during stalled talks with Hamas”
+
+### Excluded Cases
+- Articles describing **military offensives or battlefield strategy**
+- Domestic political fallout unrelated to the negotiation process
+- ICC or international legal discussions  
+  *Example:* “ICC files request to arrest Netanyahu” → International Legal & Diplomatic Pressure
+
+### Edge Cases
+- If an article discusses **military operations triggered by failed negotiations**, we include only when the emphasis remains on the negotiation process.  
+- Family testimonies are included **only if directly connected to pressure for a deal**.  
+- Foreign mediation (Qatar, Egypt, U.S. involvement) remains here **unless** the primary focus becomes broader diplomatic relations.
+- Articles mentioning U.S. leaders but centered on cease-fire negotiation terms  
+  *Example:* “Netanyahu responds to Biden’s Gaza cease-fire statement”  
+  Although the article includes Biden, the focus is the **cease-fire framework and negotiation process**, not US–Israel diplomatic relations. Therefore, it belongs in **Hostage Crisis & Cease-fire Negotiations**.
+
+
 ## 6. Iran, Hezbollah, and Regional Escalation
 
 ### Definition
