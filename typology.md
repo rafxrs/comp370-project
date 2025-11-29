@@ -1,3 +1,10 @@
+## Opening
+
+This system of types is created in order to further assess the American media coverage of Netanyahu. By creating a strong typology, we can explore the range of topics that are represented. We are interested in the intersection of many of these types, and how each may influence another. Through this system, we can analyze the tonality of the coverage, as well as the frequency of certain categories over others.
+
+We are able to evaluate international relations with regards to Netanyahu, with a focus on the United States’ and Israel’s relationship. We can also explore internal and domestic politics and their association to Israel’s military strategies. We assess the political landscape as well, extending to tensions in regional areas, hostage crises, and conflict negotiations. Lastly, we see how these topics affect the overall perception of Netanyahu, tied to his personal challenges, such as corruption investigations and legal concerns. 
+
+
 ## 1. US-Israel Diplomatic Relations
 
 ### Definition
