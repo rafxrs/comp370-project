@@ -6,18 +6,18 @@ Analysis of North American media coverage of **Benjamin Netanyahu**. The pipelin
 
 ## Features
 
-- Fetch articles via TheNewsAPI
-- Source domain filtering
-- Date range start filtering (`-d` flag)
+- Fetch articles via TheNewsAPI.com
+- Source domain filtering (by date, news provider, keyword, etc)
 - Clean text (remove boilerplate/login/video UI noise)
 - Output TSV with `published_at` ISO timestamps
 - Processing script to add numbering & coding columns
 - Merge multiple TSVs
-- Environment‑based secret management (`NEWS_API_KEY`)
 
 ## Setup
 
 ```bash
+git clone https://github.com/rafxrs/comp370-project
+mkdir -p data/raw data/processed
 pip install -r requirements.txt
 export NEWS_API_KEY="your_api_key"  # or set in PowerShell: $env:NEWS_API_KEY="your_api_key"
 ```
@@ -27,7 +27,7 @@ export NEWS_API_KEY="your_api_key"  # or set in PowerShell: $env:NEWS_API_KEY="y
 Basic example:
 
 ```bash
-python -m scripts.fetch_news_api_articles -f Netanyahu -s nbcnews.com abcnews.go.com cbsnews.com cbc.ca -t 167 -o data/raw/netanyahu.tsv
+python -m scripts.fetch_news_api_articles -f Netanyahu -s nbcnews.com abcnews.go.com cbsnews.com cbc.ca -d 2024 -t 167 -o data/raw/netanyahu.tsv
 ```
 
 ### Date Start Filtering (-d / --date)
@@ -92,12 +92,6 @@ Removes login prompts, stray UI text, duration labels, boilerplate, excess white
 - TF‑IDF and summary generation
 - Sentiment annotation (pos/neg/neutral)
 
-## Security & Secrets
-
-- API key loaded from environment in `src/config.py`.
-- Rotate the key if previously committed (generate new key, revoke old).
-- `.gitignore` excludes pycache and secret files.
-
 ## Notes
 
 - High targets may exhaust free tier quotas.
@@ -106,3 +100,4 @@ Removes login prompts, stray UI text, duration labels, boilerplate, excess white
 ## License / Usage
 
 Academic / course project. Verify terms of TheNewsAPI for data usage.
+
