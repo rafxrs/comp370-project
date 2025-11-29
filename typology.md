@@ -53,10 +53,10 @@ Articles which describe **internal political affairs**, such as administration, 
 - Articles addressing military operations or strategies
 
 ### Edge Cases (Examples)
-- If the article implicates effects on the internal political landscape of Israel, we include.   
+- If the article implicates effects on the **internal political landscape** of Israel, we include.   
   *Example:* “Netanyahu announces Al Jazeera will no longer be allowed to broadcast from Israel”  
   Though Al Jazeera is a Qatari media network, the article focuses on internal media, therefore we include.  
-- Articles which reflect Neytanhu's personal expressions are exlcuded, as it strays from his political standing.  
+- Articles which reflect Neytanhu's **personal expressions** are exlcuded, as it strays from his political standing.  
   *Example:* “Netanyahu slams the west for recognizing Palestinian state”
   We exclude this article, though it refers to the prime minister's political views, it targets his expression towards another country.
 
