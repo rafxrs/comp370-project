@@ -1,8 +1,13 @@
-# scripts/fetch_news_api_articles.py
+#!/usr/bin/env python3
+import sys
+from pathlib import Path
+# add project root to sys.path
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.append(str(ROOT))
 
 import argparse
-from src.news_api_fetcher import ArticleFetcher
-from src.writer import write_tsv
+from src.utils.news_api_fetcher import ArticleFetcher
+from src.utils.writer import write_tsv
 
 def parse_args():
     parser = argparse.ArgumentParser(

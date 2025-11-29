@@ -3,7 +3,6 @@ import argparse
 import pandas as pd
 import os
 
-
 def add_numbering(input_path, output_path):
     # Load TSV
     df = pd.read_csv(input_path, sep="\t")
