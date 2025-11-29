@@ -13,16 +13,35 @@ A complete, modular Python pipeline for analyzing North American media coverage 
 - Easily switch to a different politician by changing input flags
 
 ## Setup
-
+Linux / macOS
 ```
 git clone https://github.com/rafxrs/comp370-project
+cd comp370-project
+
 mkdir -p data/raw data/processed data/tfidf
 pip install -r requirements.txt
 
 export NEWS_API_KEY="your_api_key"
-# PowerShell:
-# $env:NEWS_API_KEY="your_api_key"
+
+pytest -v
 ```
+Windows Powershell
+```
+git clone https://github.com/rafxrs/comp370-project
+cd comp370-project
+
+mkdir data\raw
+mkdir data\processed
+mkdir data\tfidf
+
+pip install -r requirements.txt
+
+$env:NEWS_API_KEY="your_api_key"
+
+pytest -v
+```
+
+
 
 ## FULL WORKFLOW
 
