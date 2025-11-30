@@ -215,3 +215,12 @@ This category captures coverage focused on **Netanyahu’s personal reputation, 
   *Example:* “Netanyahu mocked during state visit speech” → Personal Image unless diplomacy dominates  
 - **Borderline case: calls to resign**  
   *Example:* “Pelosi says Netanyahu should resign” → Netanyahu’s Political Standing & Israeli Domestic Politics
+
+
+## Closing
+
+This typology provides a structured foundation for understanding the breadth of North American media coverage on Netanyahu, allowing for a more systematic examination of how conflict, diplomacy, and political narratives are framed. By distinguishing between domestic politics, international diplomacy, military strategy, legal accountability, hostage negotiations, regional escalation, and personal image, we create a clearer analytical lens through which patterns in coverage become visible.
+
+These categories make it possible to track not only the frequency of certain themes but also their interplay—for instance, how military strategy intersects with diplomatic pressure, or how domestic political challenges emerge alongside hostage negotiations. Such distinctions highlight the layered nature of media framing and help illuminate the shifting priorities and concerns reflected in public discourse.
+
+Overall, this typology serves as a tool for deeper comparative analysis, enabling more consistent annotation, improved coding reliability, and a more nuanced understanding of how Netanyahu is portrayed across diverse contexts. It can be adapted or expanded as new developments arise, ensuring that the framework remains responsive to the evolving political landscape.
