@@ -3,7 +3,7 @@ For this process, ChatGPT was used to produce summaries. The articles associated
 
 ## 1. US-Israel diplomatic relations
 
-**Prompt:** Given the following articles related to the topic of US-Israel Diplomatic Relations, create a neutral summary describing the content and themes that are found. #include all relevant articles
+**Prompt:** Given the following articles related to the topic of US-Israel Diplomatic Relations, create a neutral summary describing the content and themes that are found. (include all relevant articles)
 
 **Summary:**
 
@@ -12,7 +12,7 @@ This body of articles chronicles the evolving political relationship between the
 
 ## 2. Netanyahu’s Political Standing & Israeli Domestic Politics
 
-**Prompt:**
+**Prompt:** Given the following articles related to the topic of Netanyahu’s Political Standing & Israeli Domestic Politics, create a neutral summary describing the content and themes that are found. (include all relevant articles)
 
 **Summary:**
 
