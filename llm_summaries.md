@@ -1,4 +1,4 @@
-# LLM Summaries for articles categorized into each type
+# LLM Summaries for the typology
 For this process, ChatGPT was used to produce summaries. The articles associated to each type in our dataset were used as input to the LLM in order to create a short descrpition of each category. 
 
 ## 1. US-Israel diplomatic relations
