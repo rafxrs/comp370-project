@@ -30,7 +30,7 @@ These articles depict Israeli Prime Minister Benjamin Netanyahu navigating a per
 
 **Summary:**
 
-## 5. Personal Image and public perception
+## 5. Personal Image and Public Perception
 
 **Prompt:**
 
