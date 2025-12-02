@@ -3,7 +3,7 @@ For this process, ChatGPT was used to produce summaries. The articles associated
 
 ## 1. US-Israel diplomatic relations
 
-**Prompt:**
+**Prompt:** Given the following articles related to the topic of US-Israel Diplomatic Relations, create a neutral summary describing the content and themes that are found. #include all relevant articles
 
 **Summary:**
 
