@@ -1,0 +1,16 @@
+Personal Image & Public Perception: 37 (7.33%)
+Gaza War Military Operations & Strategy: 69 (13.66%)
+US-Israel diplomatic relations: 156 (30.89%)
+US–Israel Diplomatic Relations: 1 (0.20%)
+Netanyahu’s Political Standing & Israeli Domestic Politics: 48 (9.50%)
+International Legal & Diplomatic Pressure: 81 (16.04%)
+US–Israel diplomatic relations: 1 (0.20%)
+Iran, Hezbollah, and Regional Escalation: 41 (8.12%)
+Hostage Crisis & Cease-fire Negotiations: 71 (14.06%)
+
+# the following command was used to generate this file:
+$ awk -F'\t' 'NR>1 {count[$7]++} END {
+  total=0;
+  for (c in count) total+=count[c];
+  for (c in count) printf "%s: %d (%.2f%%)\n", c, count[c], (count[c]/total)*100
+}' data/processed/netanyahu_500_annotated.tsv > results/coding_percentages.txt
