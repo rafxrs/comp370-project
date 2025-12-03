@@ -1,0 +1,10 @@
+Positive: 42 (8.37%)
+Neutral: 329 (65.54%)
+Negative: 131 (26.10%)
+
+# the command used to generate this file:
+awk -F'\t' 'NR>1 {count[$8]++} END {
+  total=0;
+  for (c in count) total+=count[c];
+  for (c in count) printf "%s: %d (%.2f%%)\n", c, count[c], (count[c]/total)*100
+}' data/processed/netanyahu_500_annotated.tsv > results/percentages/sentiment_percentages.txt

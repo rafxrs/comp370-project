@@ -1,0 +1,13 @@
+washingtonpost.com: 41 (8.17%)
+nationalpost.com: 98 (19.52%)
+foxnews.com: 126 (25.10%)
+globalnews.ca: 70 (13.94%)
+nbcnews.com: 108 (21.51%)
+abcnews.go.com: 59 (11.75%)
+
+# the command used to generate this file:
+awk -F'\t' 'NR>1 {count[$2]++} END {
+  total=0;
+  for (c in count) total+=count[c];
+  for (c in count) printf "%s: %d (%.2f%%)\n", c, count[c], (count[c]/total)*100
+}' data/processed/netanyahu_500_annotated.tsv > results/percentages/news_outlets_percentages.txt
