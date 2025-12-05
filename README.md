@@ -129,7 +129,7 @@ Produces:
 
 ### 6. Chart Generation
 
-To regenerate result charts:
+To generate result charts:
 
 ```bash
 python -m scripts.create_charts \
@@ -163,4 +163,5 @@ The script automatically:
 ## License
 
 For academic use (COMP370 coursework)
+
 
