@@ -119,7 +119,7 @@ This file is what you annotate manually before running the TF‑IDF.
 Uses **global unigram TF‑IDF** and averages scores per coding category.
 
 ```bash
-python scripts/tf_idf.py     -i data/processed/netanyahu_annotated.xlsx     -n 10     -o data/tfidf
+python -m scripts.tf_idf     -i data/processed/netanyahu_annotated.xlsx     -n 10     -o data/tfidf
 ```
 
 Produces:
@@ -163,3 +163,4 @@ The script automatically:
 ## License
 
 For academic use (COMP370 coursework)
+
